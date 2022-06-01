@@ -1,0 +1,23 @@
+### сложение списка чисел (REST)
+POST http://localhost:8080/sum
+Content-Type: application/json
+
+[1,2,-3]
+
+### поиск по инн (REST)
+GET http://localhost:8080/find?inn=123
+
+### загрузка нового файла и именем и инн (SOAP http://localhost:8080/ws/test.wsdl)
+POST http://localhost:8080/ws/service1
+Content-Type: text/xml
+SOAPAction: ""
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns="urn://timtish.ru/stub/service1/1.0">
+    <soapenv:Body>
+        <ns:uploadRequest>
+            <ns:inn>123</ns:inn>
+            <ns:fileName>123.txt</ns:fileName>
+            <ns:data>0L/RgNC+0LLQtdGA0LrQsAo=</ns:data>
+        </ns:uploadRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
