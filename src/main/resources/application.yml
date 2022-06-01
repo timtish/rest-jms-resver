@@ -1,0 +1,17 @@
+server:
+  port: 8080
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:h2:~/db1;MODE=PostgreSQL;IGNORECASE=TRUE;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  activemq:
+    broker-url: vm://embedded?broker.persistent=false,useShutdownHook=false
+    non-blocking-redelivery: true
+springfox:
+  documentation:
+    auto-startup: false

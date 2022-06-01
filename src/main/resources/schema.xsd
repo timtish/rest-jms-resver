@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn://timtish.ru/stub/service1/1.0"
+           targetNamespace="urn://timtish.ru/stub/service1/1.0" elementFormDefault="qualified">
+    <xs:complexType name="UploadRequest">
+        <xs:annotation>
+            <xs:documentation>Запрос добавления бинарных данных связанных с ИНН</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="inn" type="xs:string"/>
+            <xs:element name="fileName" type="xs:string" minOccurs="0"/>
+            <xs:element name="data" type="xs:base64Binary"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="uploadRequest" type="tns:UploadRequest"/>
+    <xs:element name="uploadResponse" type="xs:boolean"/>
+</xs:schema>
